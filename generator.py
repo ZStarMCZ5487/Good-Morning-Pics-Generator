@@ -1,3 +1,5 @@
+import subprocess
+import sys
 import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
@@ -11,6 +13,16 @@ import random
 #    image_url = "https://api.waifu.pics/sfw/waifu"
 #else:
 #    image_url = give me husbando version... pls 👉👈🥺
+
+def install_requirements():
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+        print("All required packages installed successfully!")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+install_requirements()
+
 
 root = tk.Tk()
 root.title("Good Morning Pics Generator")
