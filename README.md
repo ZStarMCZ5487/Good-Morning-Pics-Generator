@@ -5,6 +5,15 @@ A good morning pics generator(with ur waifu) for u to send to ur parent, uncle o
 - only have waifu, no husbando, open an issue if u got any db to pull sexy husbando pics.
 - idk wat else i can put here.
 - oh, here's the good morning pics.
+
+if u dunno how to start, make sure u have python install, if u don hav just type this and install python.
+```
+python
+``` 
+then this for start
+```
+python generator.py
+```
 # English Version
 ![alt text](eng.png)
 # Chinese Version
