@@ -46,34 +46,92 @@ def generate():
     width, height = img.size
 
     if selected_lang.get() == "English":
-        with open("title/title_en.txt", "r", encoding="utf-8") as file:
-            title = file.readlines()
-        title = [line.strip() for line in title if line.strip()]
-        random_title = random.choice(title)
-        title_size = width/10
-        wrapped_title= textwrap.fill(random_title, width=10)
+        if selected_mode.get() == "Good Morning":
+            with open("title/morning_title_en.txt", "r", encoding="utf-8") as file:
+                title = file.readlines()
+            title = [line.strip() for line in title if line.strip()]
+            random_title = random.choice(title)
+            title_size = width/10
+            wrapped_title= textwrap.fill(random_title, width=10)
 
-        with open("description/description_en.txt", "r", encoding="utf-8") as file:
-            description = file.readlines()
-        description = [line.strip() for line in description if line.strip()]
-        random_description = random.choice(description)
-        description_size = width/12
-        wrapped_description = textwrap.fill(random_description, width=20)
+            with open("description/morning_description_en.txt", "r", encoding="utf-8") as file:
+                description = file.readlines()
+            description = [line.strip() for line in description if line.strip()]
+            random_description = random.choice(description)
+            description_size = width/12
+            wrapped_description = textwrap.fill(random_description, width=20)
+        if selected_mode.get() == "Good Afternoon":
+            with open("title/afternoon_title_en.txt", "r", encoding="utf-8") as file:
+                title = file.readlines()
+            title = [line.strip() for line in title if line.strip()]
+            random_title = random.choice(title)
+            title_size = width/10
+            wrapped_title= textwrap.fill(random_title, width=10)
+
+            with open("description/afternoon_description_en.txt", "r", encoding="utf-8") as file:
+                description = file.readlines()
+            description = [line.strip() for line in description if line.strip()]
+            random_description = random.choice(description)
+            description_size = width/12
+            wrapped_description = textwrap.fill(random_description, width=20)
+        if selected_mode.get() == "Good Night":
+            with open("title/night_title_en.txt", "r", encoding="utf-8") as file:
+                title = file.readlines()
+            title = [line.strip() for line in title if line.strip()]
+            random_title = random.choice(title)
+            title_size = width/10
+            wrapped_title= textwrap.fill(random_title, width=10)
+
+            with open("description/night_description_en.txt", "r", encoding="utf-8") as file:
+                description = file.readlines()
+            description = [line.strip() for line in description if line.strip()]
+            random_description = random.choice(description)
+            description_size = width/12
+            wrapped_description = textwrap.fill(random_description, width=20)
 
     elif selected_lang.get() == "Chinese":
-        with open("title/title_cn.txt", "r", encoding="utf-8") as file:
-            title = file.readlines()
-        title = [line.strip() for line in title if line.strip()]
-        random_title = random.choice(title)
-        title_size = width/6
-        wrapped_title= textwrap.fill(random_title, width=2)
+        if selected_mode.get() == "Good Morning":
+            with open("title/morning_title_cn.txt", "r", encoding="utf-8") as file:
+                title = file.readlines()
+            title = [line.strip() for line in title if line.strip()]
+            random_title = random.choice(title)
+            title_size = width/10
+            wrapped_title= textwrap.fill(random_title, width=10)
 
-        with open("description/description_cn.txt", "r", encoding="utf-8") as file:
-            description = file.readlines()
-        description = [line.strip() for line in description if line.strip()]
-        random_description = random.choice(description)
-        description_size = width/15
-        wrapped_description= textwrap.fill(random_description, width=10)
+            with open("description/morning_description_cn.txt", "r", encoding="utf-8") as file:
+                description = file.readlines()
+            description = [line.strip() for line in description if line.strip()]
+            random_description = random.choice(description)
+            description_size = width/12
+            wrapped_description = textwrap.fill(random_description, width=20)
+        if selected_mode.get() == "Good Afternoon":
+            with open("title/afternoon_title_cn.txt", "r", encoding="utf-8") as file:
+                title = file.readlines()
+            title = [line.strip() for line in title if line.strip()]
+            random_title = random.choice(title)
+            title_size = width/10
+            wrapped_title= textwrap.fill(random_title, width=10)
+
+            with open("description/afternoon_description_cn.txt", "r", encoding="utf-8") as file:
+                description = file.readlines()
+            description = [line.strip() for line in description if line.strip()]
+            random_description = random.choice(description)
+            description_size = width/12
+            wrapped_description = textwrap.fill(random_description, width=20)
+        if selected_mode.get() == "Good Night":
+            with open("title/night_title_cn.txt", "r", encoding="utf-8") as file:
+                title = file.readlines()
+            title = [line.strip() for line in title if line.strip()]
+            random_title = random.choice(title)
+            title_size = width/10
+            wrapped_title= textwrap.fill(random_title, width=10)
+
+            with open("description/night_description_cn.txt", "r", encoding="utf-8") as file:
+                description = file.readlines()
+            description = [line.strip() for line in description if line.strip()]
+            random_description = random.choice(description)
+            description_size = width/12
+            wrapped_description = textwrap.fill(random_description, width=20)
 
     title_font = ImageFont.truetype("ttf/NotoSansSC-Medium.ttf", size=title_size)
     description_font = ImageFont.truetype("ttf/NotoSansSC-Medium.ttf", size=description_size)
@@ -115,6 +173,14 @@ def generate():
 label = tk.Label(root, text="Choose a language:", font=("Arial", 14))
 label.pack(pady=10)
 
+mode = ["Good Morning", "Good Afternoon", "Good Night"]
+
+selected_mode = tk.StringVar()
+selected_mode.set(mode[0])
+
+mode_dropdown = tk.OptionMenu(root, selected_mode, *mode)
+mode_dropdown.config(font=("Arial", 12))
+mode_dropdown.pack(pady=10)
 
 lang = ["English", "Chinese"]
 
