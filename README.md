@@ -3,6 +3,7 @@ A good morning pics generator(with ur waifu) for u to send to ur parent, uncle o
 
 - support English and Chinese.
 - only have waifu, no husbando, open an issue if u got any db to pull sexy husbando pics.
+- Now generate Morning, Afternoon, Good night pics
 - idk wat else i can put here.
 - oh, here's the good morning pics.
 
