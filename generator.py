@@ -149,9 +149,10 @@ def generate():
 
     color = random.randint(0, 255)
     outline_color = (color, color, color)
+    outline_size = random.randint(1, 6)
 
-    for offset_x in [-2, 0, 2]:
-        for offset_y in [-2, 0, 2]:
+    for offset_x in [-outline_size, -2, 0, 2, outline_size]:
+        for offset_y in [-outline_size, -2, 0, 2, outline_size]:
             draw.text((title_position[0] + offset_x, title_position[1] + offset_y),
                       wrapped_title, font=title_font, fill=outline_color)
 
@@ -160,8 +161,8 @@ def generate():
 
     description_position = (10, height/3*2)
 
-    for offset_x in [-2, 0, 2]:
-        for offset_y in [-2, 0, 2]:
+    for offset_x in [-outline_size, -2, 0, 2, outline_size]:
+        for offset_y in [-outline_size, -2, 0, 2, outline_size]:
             draw.multiline_text((description_position[0] + offset_x, description_position[1] + offset_y),
                       wrapped_description, font=description_font, fill=outline_color)
 
